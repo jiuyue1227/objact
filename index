@@ -1,10 +1,178 @@
 <!DOCTYPE html>
-	<head>
-	<meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="address=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>游戏</title>
+    <meta name="robots" content="index,follow" />
+    <meta name="baidu-site-verification" content="tTMquKJR5R" />
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+<!-- 正文 start-->
+<section class="main">
+    <div class="game-status">
+        <img src="logo.png" class="logo">
+        <span class="game-title">
+            <img src="g1.png" width="100%">
+            <img src="g2.png" width="100%">
+            <img src="g3.png" width="100%">
+        </span>
 
-		<title></title>
-	</head>
-	<body>
-		<h1>这是标题</h1>
-	</body>
-</html>
+    </div>
+    <div class="game-body">
+        <div class="game-top">
+            <img src="gamet.png" width="100%">
+            <div class="time">倒计时:<b>30</b>s</div>
+            <div class="life">
+                <i class="life-n1">
+                    <img src="life0.png" width="100%">
+                    <b><img src="life.png" width="100%"></b>
+                </i>
+                <i class="life-n2">
+                    <img src="life0.png" width="100%">
+                    <b><img src="life.png" width="100%"></b>
+                </i>
+                <i class="life-n3">
+                    <img src="life0.png" width="100%">
+                    <b><img src="life.png" width="100%"></b>
+                </i>
+            </div>
+            <div class="game-ele-state">
+                <div class="state-p1">
+                    <span class="game1-p1">
+                        <img src="game1icon1.png" width="100%">
+                        <em><img src="game1icon10.png" width="100%"></em>
+                    </span>
+                    <span class="game1-p2">
+                        <img src="game1icon4.png" width="100%">
+                        <em><img src="game1icon40.png" width="100%"></em>
+                    </span>
+                    <span class="game1-p3">
+                        <img src="game1icon5.png" width="100%">
+                        <em><img src="game1icon50.png" width="100%"></em>
+                    </span>
+                </div>
+                <div class="state-p2 game-none">
+                    <span class="game2-p1">
+                        <img src="game2icon1.png" width="100%">
+                        <em><img src="game2icon10.png" width="100%"></em>
+                    </span>
+                    <span class="game2-p2">
+                        <img src="game2icon3.png" width="100%">
+                        <em><img src="game2icon30.png" width="100%"></em>
+                    </span>
+                </div>
+                <div class="state-p3 game-none">
+                    <span class="game3-p1">
+                        <img src="game3icon1.png" width="100%">
+                        <em>
+                            <img src="game3icon10.png" width="100%">
+                        </em>
+                    </span>
+                    <span class="game3-p2">
+                        <img src="game3icon2.png" width="100%">
+                        <em>
+                            <img src="game3icon20.png" width="100%">
+                        </em>
+                    </span>
+                    <span class="game3-p3">
+                        <img src="game3icon3.png" width="100%">
+                        <em>
+                            <img src="game3icon30.png" width="100%">
+                        </em>
+                    </span>
+                    <span class="game3-p4">
+                        <img src="game3icon4.png" width="100%">
+                        <em>
+                            <img src="game3icon40.png" width="100%">
+                        </em>
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="game-down">
+            <div class="game-ele"></div>
+            <div class="game-footer">
+                <img src="iswrong.png" class="isWrong">
+                <img src="people.png" width="100%">
+                <img src="shine.png" class="shine">
+            </div>
+        </div>
+        <div class="result" id="result_box">
+        
+        </div>
+    </div>
+
+
+
+    <div class="game-pop">
+
+        <!--第1关闯关提示-->
+        <div class="pop_p1 pop-g">
+            <img src="p1bg.png" width="100%">
+            <a href="javascript:void(0);">
+                <img src="btn.png" width="100%">
+            </a>
+        </div>
+
+        <!--第2关闯关提示-->
+        <div class="pop_p2 pop-g game-none">
+            <img src="p2bg.png" width="100%">
+            <a href="javascript:void(0);">
+                <img src="btn.png" width="100%">
+            </a>
+        </div>
+
+        <!--第3关闯关提示-->
+        <div class="pop_p3 pop-g game-none">
+            <img src="p3bg.png" width="100%">
+            <a href="javascript:void(0);">
+                <img src="btn.png" width="100%">
+            </a>
+        </div>
+
+        <!--第1关闯关成功-->
+        <div class="pop1_p0 pop-b game-none">
+            <img src="popp10.png">
+        </div>
+
+        <!--第1关闯关失败-->
+        <div class="pop1_p1 pop-b game-none">
+            <img src="popp11.png">
+        </div>
+
+        <!--第2关闯关成功-->
+        <div class="pop2_p0 pop-b game-none">
+            <img src="popp20.png">
+        </div>
+
+        <!--第2关闯关失败-->
+        <div class="pop2_p1 pop-b game-none">
+            <img src="popp21.png">
+        </div>
+
+        <!--第3关闯关成功-->
+        <div class="pop3_p0 pop-b game-none">
+            <img src="popp30.png">
+        </div>
+
+        <!--第3关闯关失败-->
+        <div class="pop3_p1 pop-b game-none">
+            <img src="popp31.png">
+        </div>
+
+    </div>
+
+</section>
+
+
+</body>
+<html>
