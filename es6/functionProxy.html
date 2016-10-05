@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	'use strict';
+	function user(){
+		console.log('this is a function');
+	}
+
+	var proxy = new Proxy(user,{
+		apply: function(target, cxt, args){
+			return Reflect.apply(target, cxt, args);
+		}
+	})
+
+	proxy();
+
+
+
+
+
+
+
+
+
+
+	// 构造函数的拦截
+	function Test(){
+		console.log('this is a function');
+	}
+
+	let ProxyFun = new Proxy(Test,{
+		construct: function(target, cxt, args){
+			console.log('this is a proxy');
+			return Reflect.construct(target, cxt, args);
+		}
+	})
+
+	new ProxyFun();
+	
+
+
+</script>
+</body>
+</html>

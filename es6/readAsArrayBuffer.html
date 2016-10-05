@@ -1,0 +1,25 @@
+<DOCTYPE html>
+<head>
+<mate Content-Type='text/html' charset='utf8'> 
+</head>
+<body>
+<input type='file' id='fileinput'>
+<script>
+  
+	var input = document.getElementById('fileinput');
+	
+	input.onchange = function(){
+		
+		var fileImg = input.files[0];
+		var reader = new FileReader();
+		reader.readAsArrayBuffer(fileImg);
+		
+		reader.onload = function(){
+			
+			console.log(reader);
+		}
+	};
+
+</script>
+</body>
+</html>

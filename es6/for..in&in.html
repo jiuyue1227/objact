@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		'use strict';
+		let obj = {
+			name: 'leo',
+			_name: 'lucy',
+			age: '20',
+			_age: '30',
+			sex: 'boy',
+			_sex: 'girl'
+		}
+		var proxy = new Proxy(obj, {
+			has: function(target, key){
+				if (key[0] !== '_') {
+					return target[key];
+					// return Reflect.has(target, key);
+				}
+			}
+		})
+
+		console.log('_name' in proxy);
+
+
+		var proxy2 = new Proxy(obj, {
+			enumerate: function(target){
+				return Object.keys(target).filter(function(key){
+				
+					return key[0] !== '_';
+				})[Symbol.iterator]();
+			}
+		})
+
+		console.log(proxy2);
+		for (var key in proxy2) {
+			//console.log(key);
+		}
+		
+	</script>
+</body>
+</html>

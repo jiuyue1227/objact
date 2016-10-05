@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+<meta Content-Type='text/html' charset='utf-8'> 
+</head>
+<body>
+<xmp>
+	对象拷贝
+	object.assign({},{'name':'lucy'})
+
+	es6对对象的写法进行了简化
+	从原先的
+	var _num = 2;
+	obj = {
+		fn: function(arg1, arg2){
+			return {
+				arg1: arg1, 
+				arg2: arg2
+			}
+		}
+	}
+	obj['new' + _num] = 'is new number';
+	简化成现在的
+	var _num = 2;
+	obj{
+		['new' + _num]: 'is new number',
+		fn(arg1, arg2){
+			return {arg1, arg2}
+		}
+	}
+</xmp>
+<img id='img' />
+<script>
+  
+	var img = document.getElementById('img');
+
+	// 创建ajax 对象
+	var xhr = new XMLHttpRequest(); 
+
+	//设置ajax对象的request的类型
+	xhr.responseType = 'arraybuffer';
+
+	//设置请求类型跟请求地址
+	xhr.open('GET', '../testimg/img1.jpg');
+
+	//请求成功操作
+	xhr.onload = function () {
+		var value = xhr.response;
+		var blob = new Blob([value]);
+		console.log(value);
+		console.log(11);
+		img.src = window.URL.createObjectURL(blob);
+
+	}
+
+	//发送
+	xhr.send();
+
+
+
+</script>
+</body>
+</html>

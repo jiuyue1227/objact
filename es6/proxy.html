@@ -1,0 +1,50 @@
+
+</!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	'use strict';
+	var user = {
+		name: 'leo',
+		age: '22'
+	}
+
+	let proxy = new Proxy(user, {
+		get: function(target, key){
+			if (key !== 'name') {
+				return Reflect.get(target, key);
+			}
+			
+		},
+
+		set: function (target, key, value) {
+
+			
+			if (key !== 'name') {
+				return Reflect.set(target, key, value);
+			} 
+			
+		},
+
+		deleteProperty: function(target, key){
+			Reflect.deleteProperty(target, key);
+		}
+	})
+
+	console.log(user.name);
+	
+
+	//proxy.name = 'lucy';
+	proxy.age = '33'
+
+	console.log(user);
+	console.log(proxy.age);
+	
+
+
+</script>
+</body>
+</html>
